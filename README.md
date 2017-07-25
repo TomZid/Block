@@ -4,7 +4,6 @@
 ```Objective-C
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //block 改变捕获的变量作为block的成员变量，改变了block捕获的变量，外部变量也会被改变
     int __block a = 10;
     void(^block)(void);
     //打印a数值和指针

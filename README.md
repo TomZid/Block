@@ -29,3 +29,6 @@
 block引用了外部变量，那么block初始化的isa指针变为NSMallocBlock，也就是说是堆中的block，同时引用的变量在block结构体中声明为成员变量保存在堆中。
 在block中对捕获的变量进行修改为了保持与外部变量的一致，那么外部变量的指针发生了改变，指针指向了新的地址也就是改变过后的值的地址。
 保守估计苹果的做法是在block中对引用的变量进行了深拷贝的同时还保留了一份指针引用，方便在修改引用时做指针改变。
+
+苹果官方文档对：
+> __block storage is similar to, but mutually exclusive of, the register, auto, and static storage types for local variables https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/Blocks/Articles/bxVariables.html#//apple_ref/doc/uid/TP40007502-CH6-SW6
